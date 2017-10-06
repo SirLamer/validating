@@ -153,6 +153,17 @@ trait ValidatingTrait
     }
 
     /**
+     * Handy method for using the static call Model::validationMessages(). Protected access
+     * only to allow __callStatic to get to it.
+     *
+     * @return array
+     */
+    protected function validationMessages()
+    {
+        return $this->getValidationMessages();
+    }
+
+    /**
      * Get the custom validation messages being used by the model.
      *
      * @return array
@@ -163,9 +174,20 @@ trait ValidatingTrait
     }
 
     /**
+     * Handy method for using the static call Model::validationAttributeNames(). Protected access
+     * only to allow __callStatic to get to it.
+     *
+     * @return array
+     */
+    protected function validationAttributeNames()
+    {
+        return $this->getValidationAttributeNames();
+    }
+
+    /**
      * Get the validating attribute names.
      *
-     * @return mixed
+     * @return array
      */
     public function getValidationAttributeNames()
     {
